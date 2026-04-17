@@ -20,7 +20,7 @@ import Jobs from "../pages/Jobs";
 import JobView from "../pages/Jobs/JobView";
 import Kanban from "../pages/Kanban";
 import Planning from "../pages/planning";
-import SiteMeasurement from "../pages/Sitemeasurement";
+import SiteMeasurement from "../pages/SiteMeasurement";
 import Drafting from "../pages/Drafting";
 import MaterialPurchase from "../pages/MaterialPurchase";
 
