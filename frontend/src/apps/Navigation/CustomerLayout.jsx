@@ -24,12 +24,13 @@ import {
 } from "@ant-design/icons";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 import logoIcon from "@/style/images/logo-icon.png";
 
 const { Sider, Header, Content } = Layout;
 const { Text } = Typography;
 
-const API_BASE = "http://localhost:8888/api";
+const API_BASE = API_BASE_URL;
 
 export default function CustomerLayout() {
   const location = useLocation();

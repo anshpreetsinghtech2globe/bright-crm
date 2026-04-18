@@ -1,8 +1,9 @@
 import axiosClient from "../../api/axiosClient";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
 // NOTE: backend endpoints adjust if your routes differ
 export const getCustomers = async () => {
-  console.log("Calling:", "http://localhost:8888/api/customer/list");
+  console.log("Calling:", `${API_BASE_URL}customer/list`);
   const res = await axiosClient.get("/api/customer/list");
   return res.data?.result || [];
 };

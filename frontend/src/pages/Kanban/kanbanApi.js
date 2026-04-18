@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
-const API = "http://localhost:8888/api/kanban";
+const API = `${API_BASE_URL}kanban`;
 
 const authHeaders = () => {
   const token = window.localStorage.getItem("token");

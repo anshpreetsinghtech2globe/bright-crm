@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
-const BASE = "http://localhost:8888/api";
+const BASE = API_BASE_URL;
 
 // ⚠️ IMPORTANT: same key use karo har jagah
 const TOKEN_KEY = "token"

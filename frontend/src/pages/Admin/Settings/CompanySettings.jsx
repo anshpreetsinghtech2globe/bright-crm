@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Card, Form, Input, Button, Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
+import { API_BASE_URL, BASE_URL } from '@/config/serverApiConfig';
 
-const API_BASE = "http://localhost:8888/api";
+const API_BASE = API_BASE_URL;
 
 const authHeaders = () => {
   const token = localStorage.getItem("token");
@@ -88,7 +89,7 @@ export default function CompanySettings() {
           >
             {logoUrl ? (
               <img
-                src={`http://localhost:8888${logoUrl}`}
+                src={`${BASE_URL}${logoUrl}`}
                 alt="logo"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

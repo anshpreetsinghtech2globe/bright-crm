@@ -2,10 +2,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Card, Form, message, Alert, Button, Space } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../../../config/serverApiConfig";
 
 import QuoteForm from "../Forms/QuoteForm";
 
-const API = "http://localhost:8888/api/quote";
+const API = `${API_BASE_URL}/api/quote`;
 
 const authHeaders = () => {
   const token = localStorage.getItem("token");

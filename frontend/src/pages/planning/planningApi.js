@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
-const API = "http://localhost:8888/api/planning";
+const API = `${API_BASE_URL}planning`;
 
 const authHeaders = () => {
   const token = localStorage.getItem("token");

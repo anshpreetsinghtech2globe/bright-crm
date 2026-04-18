@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { UserOutlined, LockOutlined, IdcardOutlined, MailOutlined } from "@ant-design/icons";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
 const { Title, Text } = Typography;
 
-const API = "http://localhost:8888/api/auth/login";
+const API = `${API_BASE_URL}auth/login`;
 
 export default function Login() {
   const [loading, setLoading] = useState(false);

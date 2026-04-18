@@ -4,6 +4,7 @@ import { Card, Timeline, Button, Modal, Form, DatePicker, InputNumber, Input, me
 import { DollarOutlined, FileTextOutlined, PlusOutlined, DownloadOutlined } from "@ant-design/icons";
 import axios from "axios";
 import dayjs from "dayjs";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
 // Standard Auth Headers
 const authHeaders = () => {
@@ -11,7 +12,7 @@ const authHeaders = () => {
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
-const API = "http://localhost:8888/api/job";
+const API = `${API_BASE_URL}job`;
 
 const STAGES_CONFIG = [
   {
@@ -123,7 +124,7 @@ export default function JobView() {
 
   const fetchInvoices = async () => {
     try {
-      const res = await axios.get(`http://localhost:8888/api/invoice/listAll?job=${id}`, { headers: authHeaders() });
+      const res = await axios.get(`${API_BASE_URL}invoice/listAll?job=${id}`, { headers: authHeaders() });
       if (res.data?.success) setInvoices(res.data.result);
     } catch (err) {
       console.error("Failed to fetch invoices", err);
@@ -133,7 +134,7 @@ export default function JobView() {
   const fetchPayments = async () => {
     try {
       // Find invoices first to get their IDs
-      const res = await axios.get(`http://localhost:8888/api/payment/listAll`, { headers: authHeaders() });
+      const res = await axios.get(`${API_BASE_URL}payment/listAll`, { headers: authHeaders() });
       if (res.data?.success) {
         // Filter payments that belong to this job's invoices
         const jobInvoicesIds = invoices.map(inv => inv._id);

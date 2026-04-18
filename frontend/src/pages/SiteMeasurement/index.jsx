@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from '@/config/serverApiConfig';
 import dayjs from "dayjs";
 import {
   Row,
@@ -24,8 +25,8 @@ import {
 const { TextArea } = Input;
 const { Option } = Select;
 
-const JOB_API = "http://localhost:8888/api/job";
-const MEASUREMENT_API = "http://localhost:8888/api/measurement";
+const JOB_API = `${API_BASE_URL}job`;
+const MEASUREMENT_API = `${API_BASE_URL}measurement`;
 
 const authHeaders = () => {
   const token = localStorage.getItem("token");

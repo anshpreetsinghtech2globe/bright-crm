@@ -18,6 +18,7 @@ import useLanguage from "@/locale/useLanguage";
 import { erp } from "@/redux/erp/actions";
 import { selectListItems } from "@/redux/erp/selectors";
 import { useErpContext } from "@/context/erp";
+import { API_BASE_URL } from "../../config/serverApiConfig";
 import { useNavigate } from "react-router-dom";
 
 function joinPath(...parts) {
@@ -49,7 +50,7 @@ function AddNewItem({ config }) {
 // ✅ download helper (token + backend endpoint)
 async function downloadPdfFromApi({ entity, id, filename }) {
   const token = localStorage.getItem("token");
-  const url = `http://localhost:8888/api/${entity}/download/${id}`;
+  const url = `${API_BASE_URL}/api/${entity}/download/${id}`;
 
   const res = await fetch(url, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
